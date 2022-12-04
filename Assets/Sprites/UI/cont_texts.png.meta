@@ -117,16 +117,16 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialog
+      name: dialog_title
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 12
         width: 24
-        height: 24
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 6, y: 6, z: 6, w: 12}
+      border: {x: 5, y: 0, z: 4, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -158,6 +158,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: dialog_content
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 5, y: 4, z: 4, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4acb6cbd913d82044878d208cd47e23b
+      internalID: -1183983019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -169,7 +190,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dialog: 628421448
+      dialog_content: -1183983019
+      dialog_title: 628421448
       paper: -1042185274
   spritePackingTag: 
   pSDRemoveMatte: 0

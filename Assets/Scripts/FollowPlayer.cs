@@ -10,7 +10,9 @@ public class FollowPlayer : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player");
+        if (player == null) {
+            player = GameObject.Find("Player");
+        }
     }
 
     void LateUpdate()
