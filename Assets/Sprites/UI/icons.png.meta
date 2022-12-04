@@ -494,6 +494,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: iBContact
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 36
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807cc49661a532545836e263190ea986
+      internalID: 1533457302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -505,7 +526,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      iContact: 484088637
+      iBPause: -1352586518
       iBStar: 721424115
       iBUp: 282760374
       iClose: 482240564
@@ -522,7 +543,8 @@ TextureImporter:
       iBSound: 1183768618
       iBMusic: 137476897
       iBDown: 993057771
-      iBPause: -1352586518
+      iBContact: 1533457302
+      iContact: 484088637
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
