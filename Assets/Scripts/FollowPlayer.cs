@@ -16,12 +16,12 @@ public class FollowPlayer : MonoBehaviour
     void LateUpdate()
     {
         if (player.transform.position.x < xMin) {
-            transform.position = new Vector2(xMin, player.transform.position.y);
+            transform.position = new Vector3(xMin, player.transform.position.y, transform.position.z);
         }
         else if (player.transform.position.x > xMax) {
-            transform.position = new Vector2(xMax, player.transform.position.y);
+            transform.position = new Vector3(xMax, player.transform.position.y, transform.position.z);
         } else {
-            transform.position = new Vector2(player.transform.position.x, player.transform.position.y);
+            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
         }
     }
 }
