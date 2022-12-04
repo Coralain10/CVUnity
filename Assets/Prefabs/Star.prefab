@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 1769251147493987873}
   - component: {fileID: 7574173992369511281}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Border Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 7317751961026287622}
   - component: {fileID: 4689851811789558860}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
