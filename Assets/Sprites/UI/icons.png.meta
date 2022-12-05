@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: iBHeartFull
+      name: ib_heart_full
       rect:
         serializedVersion: 2
         x: 0
@@ -138,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iBHeartEmpty
+      name: ib_heart_empty
       rect:
         serializedVersion: 2
         x: 12
@@ -159,7 +159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iBStar
+      name: ib_star_full
       rect:
         serializedVersion: 2
         x: 24
@@ -180,7 +180,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iBSkills
+      name: ib_star_empty
       rect:
         serializedVersion: 2
         x: 36
@@ -201,7 +201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iBMusic
+      name: ib_skill_full
       rect:
         serializedVersion: 2
         x: 0
@@ -222,7 +222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iBSound
+      name: ib_skill_empty
       rect:
         serializedVersion: 2
         x: 12
@@ -243,7 +243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iBConfig
+      name: ib_config
       rect:
         serializedVersion: 2
         x: 24
@@ -264,7 +264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iBPause
+      name: ib_pause
       rect:
         serializedVersion: 2
         x: 0
@@ -285,7 +285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iBUp
+      name: ib_up
       rect:
         serializedVersion: 2
         x: 12
@@ -306,7 +306,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iBDown
+      name: ib_down
       rect:
         serializedVersion: 2
         x: 24
@@ -327,7 +327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iBPlay
+      name: ib_play
       rect:
         serializedVersion: 2
         x: 36
@@ -348,7 +348,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iRestart
+      name: i_restart
       rect:
         serializedVersion: 2
         x: 0
@@ -369,7 +369,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iPlay
+      name: i_play
       rect:
         serializedVersion: 2
         x: 12
@@ -390,7 +390,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iContact
+      name: i_contact
       rect:
         serializedVersion: 2
         x: 24
@@ -411,7 +411,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iCheck
+      name: i_check
       rect:
         serializedVersion: 2
         x: 0
@@ -432,7 +432,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iClose
+      name: i_close
       rect:
         serializedVersion: 2
         x: 12
@@ -453,7 +453,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iMusic
+      name: i_music
       rect:
         serializedVersion: 2
         x: 24
@@ -474,7 +474,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iSound
+      name: i_sound
       rect:
         serializedVersion: 2
         x: 36
@@ -495,7 +495,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: iBContact
+      name: ib_contact
       rect:
         serializedVersion: 2
         x: 36
@@ -503,7 +503,7 @@ TextureImporter:
         width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -526,25 +526,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      iBPause: -1352586518
-      iBStar: 721424115
-      iBUp: 282760374
-      iClose: 482240564
-      iPlay: -692204641
-      iBConfig: -1204069205
-      iBPlay: 1308428003
-      iBHeartFull: 286750992
-      iMusic: 2144269090
-      iBHeartEmpty: 286750992
-      iCheck: 1440178643
-      iBSkills: 1019262721
-      iRestart: -1332780473
-      iSound: -2051240958
-      iBSound: 1183768618
-      iBMusic: 137476897
-      iBDown: 993057771
-      iBContact: 1533457302
-      iContact: 484088637
+      ib_star_empty: 1019262721
+      ib_play: 1308428003
+      ib_heart_full: 286750992
+      i_check: 1440178643
+      i_close: 482240564
+      ib_star_full: 1019262721
+      i_sound: -2051240958
+      i_restart: -1332780473
+      ib_down: 993057771
+      ib_contact: 1533457302
+      i_contact: 484088637
+      i_play: -692204641
+      ib_up: 282760374
+      ib_skill_empty: 1183768618
+      ib_config: -1204069205
+      ib_skill_full: 137476897
+      i_music: 2144269090
+      ib_heart_empty: 721424115
+      ib_pause: -1352586518
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

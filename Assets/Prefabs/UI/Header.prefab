@@ -539,6 +539,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 721424115, guid: f1b732cd5ce52064b9da3ddc5af2fae8, type: 3}
+    - target: {fileID: 5003216677704332007, guid: da2fa7e53c4eebb43af445d73a0e75ce, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1019262721, guid: f1b732cd5ce52064b9da3ddc5af2fae8, type: 3}
     - target: {fileID: 7006461128225649999, guid: da2fa7e53c4eebb43af445d73a0e75ce, type: 3}
       propertyPath: m_Name
       value: Star Counter
@@ -848,7 +852,11 @@ PrefabInstance:
     - target: {fileID: 4016281878296909056, guid: da2fa7e53c4eebb43af445d73a0e75ce, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1019262721, guid: f1b732cd5ce52064b9da3ddc5af2fae8, type: 3}
+      objectReference: {fileID: 137476897, guid: f1b732cd5ce52064b9da3ddc5af2fae8, type: 3}
+    - target: {fileID: 5003216677704332007, guid: da2fa7e53c4eebb43af445d73a0e75ce, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1183768618, guid: f1b732cd5ce52064b9da3ddc5af2fae8, type: 3}
     - target: {fileID: 7006461128225649999, guid: da2fa7e53c4eebb43af445d73a0e75ce, type: 3}
       propertyPath: m_Name
       value: Skills Counter
