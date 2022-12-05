@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4540650113770193375}
   - component: {fileID: 4540650113770193374}
+  - component: {fileID: 7648107033771791435}
   m_Layer: 0
   m_Name: bgSky
   m_TagString: Untagged
@@ -168,6 +169,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7648107033771791435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4540650113770193372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 885c762ef7b24504496c6dd619b3702b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileMap: {fileID: 0}
+  yOverflow: 2
 --- !u!1 &4540650114964391189
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,8 +360,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4540650115306481057}
-  - component: {fileID: 1150316593}
-  - component: {fileID: 1648911686222967861}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -373,37 +386,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1150316593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4540650115306481086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 885c762ef7b24504496c6dd619b3702b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  tileMap: {fileID: 0}
-  xMin: 0
-  xMax: 160
-  yOverflow: 0
---- !u!114 &1648911686222967861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4540650115306481086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 885c762ef7b24504496c6dd619b3702b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  tileMap: {fileID: 0}
-  xMin: 0
-  xMax: 160
-  yOverflow: 2

@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TouchingDirections : MonoBehaviour
+{
+    public ContactFilter2D castFilter; //check the raycasted object
+    CapsuleCollider2D col;
+    RaycastHit2D[] groundHits = new RaycastHit2D[5];
+    
+    float groundDistance = 0.05f;
+    [SerializeField] bool isOnGround;
+    public bool IsOnGround {
+        get {return isOnGround;}
+        private set {IsOnGround = value;}
+    }
+
+    void Awake()
+    {
+        col = GetComponent<CapsuleCollider2D>();
+    }
+
+    void Update()
+    {
+        //Cast detects the number of collisions that the cast detected
+        isOnGround = col.Cast(Vector2.down, castFilter, groundHits, groundDistance) > 0;
+    }
+}

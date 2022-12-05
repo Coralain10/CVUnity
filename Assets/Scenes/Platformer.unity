@@ -870,7 +870,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileMap: {fileID: 1165573143}
   yOverflow: 1.5
-  xMax: 0
 --- !u!1001 &254753164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10239,7 +10238,7 @@ CompositeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
   m_GenerationType: 0
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.025
   m_ColliderPaths:
   - m_Collider: {fileID: 1165573146}
     m_ColliderPaths:
@@ -12813,10 +12812,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1648911686222967861, guid: 2163f7d41a245d24da2ab46253e3de54, type: 3}
-      propertyPath: tileMap
-      value: 
-      objectReference: {fileID: 1165573143}
     - target: {fileID: 4540650115306481057, guid: 2163f7d41a245d24da2ab46253e3de54, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -12865,6 +12860,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
+    - target: {fileID: 7648107033771791435, guid: 2163f7d41a245d24da2ab46253e3de54, type: 3}
+      propertyPath: tileMap
+      value: 
+      objectReference: {fileID: 1165573143}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2163f7d41a245d24da2ab46253e3de54, type: 3}
 --- !u!1001 &6309891864555537740
@@ -12874,6 +12873,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 967719252, guid: 857ea3cb7f602294aaf381dfa1565cb3, type: 3}
+      propertyPath: jumpForce
+      value: 42
+      objectReference: {fileID: 0}
     - target: {fileID: 1780901870368150971, guid: 857ea3cb7f602294aaf381dfa1565cb3, type: 3}
       propertyPath: m_Name
       value: Player
@@ -12884,7 +12887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4174943446116837515, guid: 857ea3cb7f602294aaf381dfa1565cb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.5
+      value: 26.58
       objectReference: {fileID: 0}
     - target: {fileID: 4174943446116837515, guid: 857ea3cb7f602294aaf381dfa1565cb3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12921,6 +12924,30 @@ PrefabInstance:
     - target: {fileID: 4174943446116837515, guid: 857ea3cb7f602294aaf381dfa1565cb3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001987378526535929, guid: 857ea3cb7f602294aaf381dfa1565cb3, type: 3}
+      propertyPath: m_Mass
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001987378526535929, guid: 857ea3cb7f602294aaf381dfa1565cb3, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001987378526535929, guid: 857ea3cb7f602294aaf381dfa1565cb3, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001987378526535929, guid: 857ea3cb7f602294aaf381dfa1565cb3, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001987378526535929, guid: 857ea3cb7f602294aaf381dfa1565cb3, type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001987378526535929, guid: 857ea3cb7f602294aaf381dfa1565cb3, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 857ea3cb7f602294aaf381dfa1565cb3, type: 3}
