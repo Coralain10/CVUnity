@@ -162,8 +162,8 @@ TextureImporter:
       name: ib_star_full
       rect:
         serializedVersion: 2
-        x: 24
-        y: 48
+        x: 0
+        y: 24
         width: 12
         height: 12
       alignment: 0
@@ -183,8 +183,8 @@ TextureImporter:
       name: ib_star_empty
       rect:
         serializedVersion: 2
-        x: 36
-        y: 48
+        x: 12
+        y: 24
         width: 12
         height: 12
       alignment: 0
@@ -246,7 +246,7 @@ TextureImporter:
       name: ib_config
       rect:
         serializedVersion: 2
-        x: 24
+        x: 48
         y: 36
         width: 12
         height: 12
@@ -267,8 +267,8 @@ TextureImporter:
       name: ib_pause
       rect:
         serializedVersion: 2
-        x: 0
-        y: 24
+        x: 48
+        y: 48
         width: 12
         height: 12
       alignment: 0
@@ -288,7 +288,7 @@ TextureImporter:
       name: ib_up
       rect:
         serializedVersion: 2
-        x: 12
+        x: 36
         y: 24
         width: 12
         height: 12
@@ -309,7 +309,7 @@ TextureImporter:
       name: ib_down
       rect:
         serializedVersion: 2
-        x: 24
+        x: 48
         y: 24
         width: 12
         height: 12
@@ -331,7 +331,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 36
-        y: 24
+        y: 48
         width: 12
         height: 12
       alignment: 0
@@ -515,6 +515,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ib_heart
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb646787026e42443aae686284cd4ffa
+      internalID: 973479416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ib_skill
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 36
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa7dd5ce4851d949bfef9a941c9cc71
+      internalID: -10415933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ib_star
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 24
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f16fd0c74a8624bbf292f39a6ae6f4
+      internalID: 852673875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -538,10 +601,13 @@ TextureImporter:
       ib_contact: 1533457302
       i_contact: 484088637
       i_play: -692204641
+      ib_skill: -10415933
       ib_up: 282760374
       ib_skill_empty: 1183768618
       ib_config: -1204069205
+      ib_heart: 973479416
       ib_skill_full: 137476897
+      ib_star: 852673875
       i_music: 2144269090
       ib_heart_empty: 721424115
       ib_pause: -1352586518
