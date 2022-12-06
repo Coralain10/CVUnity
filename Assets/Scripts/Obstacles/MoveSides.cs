@@ -20,7 +20,7 @@ public class MoveSides : MonoBehaviour
         xMax = transform.position.x + xRange;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (isRightFaced)
         {
