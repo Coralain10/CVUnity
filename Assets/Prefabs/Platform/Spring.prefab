@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2640692339630023249}
   - component: {fileID: -8679119348646938800}
   - component: {fileID: 8354928755107458855}
-  - component: {fileID: 8795868803557889161}
   - component: {fileID: 3660928248969403307}
   m_Layer: 0
   m_Name: Spring
@@ -125,33 +124,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.25}
   m_Size: {x: 1, y: 0.5}
   m_Direction: 1
---- !u!114 &8795868803557889161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8627348186562377426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94a8766746e2a56429b1498044c1c0b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  isOnGround: 0
 --- !u!114 &3660928248969403307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c629e0ea16ea6d24ba3b107eeab768cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 200
+  jumpForce: 300
+  startPosition: {x: 0, y: 0}
+  endPosition: {x: 0, y: 0}
   sprites:
   - {fileID: -635406737, guid: f95c379540000834db37d6a2dc29e2cf, type: 3}
   - {fileID: 1606461176, guid: f95c379540000834db37d6a2dc29e2cf, type: 3}
