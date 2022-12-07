@@ -9,11 +9,8 @@ public class TouchingDirections : MonoBehaviour
     RaycastHit2D[] groundHits = new RaycastHit2D[5];
     
     float groundDistance = 0.05f;
-    [SerializeField] bool isOnGround;
-    public bool IsOnGround {
-        get {return isOnGround;}
-        private set {IsOnGround = value;}
-    }
+    public bool IsOnGround { get; private set; }
+
 
     void Awake()
     {
@@ -23,6 +20,6 @@ public class TouchingDirections : MonoBehaviour
     void Update()
     {
         //Cast detects the number of collisions that the cast detected
-        isOnGround = col.Cast(Vector2.down, castFilter, groundHits, groundDistance) > 0;
+        IsOnGround = col.Cast(Vector2.down, castFilter, groundHits, groundDistance) > 0;
     }
 }
