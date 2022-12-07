@@ -6,21 +6,21 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
-    [SerializeField] short speed = 16;
     TouchingDirections touchingDirections;
+    short speed = 16;
     float forwardInput;
-    [SerializeField] float gravityScale = 4;
-    [SerializeField] float gravityFallScale = 12;
-    [SerializeField] float jumpMaxHeight = 2.5f;
-    [SerializeField] float jumpMinHeight = 1.25f;
-    [SerializeField] float jumpMaxDistance = 1;
-    [SerializeField] float jumpCurrHeight;
-    [SerializeField] float jumpCurrDistance;
-    [SerializeField] float jumpFirstPosition;
-    [SerializeField] float jumpForce;
-    [SerializeField] private bool isGameOver;
-    [SerializeField] private bool isFacingRight;
-    [SerializeField] private bool changedDirection;
+    float airResistance = 2f;
+    float jumpMaxHeight = 2.5f;
+    float jumpMinHeight = 1.25f;
+    float jumpMaxDistance = 1.5f;
+    float jumpCurrHeight;
+    float jumpCurrDistance;
+    float jumpFirstPosition;
+    float jumpForce;
+    bool isJumping;
+    bool isGameOver;
+    bool isFacingRight;
+    bool changedDirection;
 
     public bool useForce = true; //TODO: Check whats best
 
@@ -28,61 +28,86 @@ public class PlayerController : MonoBehaviour
     {
         isGameOver = false;
         isFacingRight = true;
+        isJumping = false;
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
         resetJump();
     }
 
-    void FixedUpdate() {
-        if (!isGameOver) {
-            setFacingDirection();
-            Move();
+    void FixedUpdate()
+    {
+        if (isJumping) 
+        {
             Jump();
         }
     }
-    void setFacingDirection () {
+
+    void Update()
+    {
+        if (!isGameOver)
+        {
+            setFacingDirection();
+            Move();
+            CheckJump();
+        }
+    }
+
+    void setFacingDirection ()
+    {
         forwardInput = Input.GetAxis("Horizontal");
-        if (forwardInput > 0 && !isFacingRight) {
+        if (forwardInput > 0 && !isFacingRight)
+        {
             isFacingRight = true;
             changedDirection = true;
-        } else if (forwardInput < 0 && isFacingRight) {
+        }
+        else if (forwardInput < 0 && isFacingRight)
+        {
             isFacingRight = false;
             changedDirection = true;
-        } else {
+        }
+        else
+        {
             changedDirection = false;
         }
     }
 
     void Move()
     {
-        if (touchingDirections.IsOnGround) {
+        if (touchingDirections.IsOnGround)
+        {
             rb.velocity = new Vector2(forwardInput * speed, rb.velocity.y);
-        } else {
-            rb.velocity = new Vector2(forwardInput * (speed/2), rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(forwardInput * (speed/airResistance), rb.velocity.y);
         }
     }
 
-    void Jump() {
-        //TODO: FIX sometimes not jumping, sometimes jumping too high
-        if (touchingDirections.IsOnGround) {
-            //Impultso para saltar según cuánto corrió
-            if (changedDirection || rb.velocity.x == 0) { resetJump(); }
-            else if (jumpCurrDistance < jumpMaxDistance && Input.GetButton("Horizontal")) {
-                jumpCurrDistance = Mathf.Min(Mathf.Abs(transform.position.x - jumpFirstPosition), jumpMaxDistance);
+    void CheckJump() {
+        if (touchingDirections.IsOnGround)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                isJumping = true;
             }
 
-            //si inicia salto
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                rb.gravityScale = gravityScale;
-                jumpCurrHeight = Mathf.Max(jumpMaxHeight * (jumpCurrDistance/jumpMaxDistance), jumpMinHeight);
-                jumpForce = Mathf.Sqrt( jumpCurrHeight * -2 * (Physics2D.gravity.y * rb.gravityScale)) * rb.mass;
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            if ( changedDirection || rb.velocity.x == 0 )
+            {
                 resetJump();
             }
+
+            //Impultso para saltar según cuánto corrió
+            jumpCurrDistance = Mathf.Min( Mathf.Abs(transform.position.x - jumpFirstPosition), jumpMaxDistance );
         }
-        if (rb.velocity.y < 0) {
-            rb.gravityScale = gravityFallScale;
-        }
+    }
+
+    void Jump()
+    {
+        jumpCurrHeight = Mathf.Max(jumpMaxHeight * (jumpCurrDistance/jumpMaxDistance), jumpMinHeight);
+        jumpForce = Mathf.Sqrt( jumpCurrHeight * -2 * (Physics2D.gravity.y * rb.gravityScale)) * rb.mass;
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        isJumping = false;
+        resetJump();
     }
 
     void resetJump() {
@@ -90,9 +115,9 @@ public class PlayerController : MonoBehaviour
         jumpFirstPosition = transform.position.x;
     }
 
-    void OnCollisionEnter2D(Collision2D col) {
-        // if (col.gameObject.CompareTag("Ground")) {
-        //     isOnGround = true;
-        // }
-    }
+    // void OnCollisionEnter2D(Collision2D col) {
+    //     // if (col.gameObject.CompareTag("Ground")) {
+    //     //     isOnGround = true;
+    //     // }
+    // }
 }
