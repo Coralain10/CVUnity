@@ -10,7 +10,7 @@ public class SpringJump : JumpOtherOnCollision
     protected override void Awake()
     {
         spriteRdrr = GetComponent<SpriteRenderer>();
-        jumpForce = 300;
+        jumpForce = 120; //96
         base.Awake();
     }
 

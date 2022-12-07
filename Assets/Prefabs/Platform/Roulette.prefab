@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 965592767281749055}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 965592768662303996}
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -766055147
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: -407718424, guid: 529990d8a431c4b44b4c285620f3a0bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -133,8 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3dc1373dd820554a83e3678b0716a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0
-  rotationScale: 57.5
+  speed: 1
+  radius: 2
 --- !u!1001 &3511818579930280180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -160,7 +160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4456881266409277851, guid: 47c3e0c91b70f3941a1f36f13194b6ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4456881266409277851, guid: 47c3e0c91b70f3941a1f36f13194b6ff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -230,7 +230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4456881266409277851, guid: 47c3e0c91b70f3941a1f36f13194b6ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4456881266409277851, guid: 47c3e0c91b70f3941a1f36f13194b6ff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -292,7 +292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4456881266409277851, guid: 47c3e0c91b70f3941a1f36f13194b6ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4456881266409277851, guid: 47c3e0c91b70f3941a1f36f13194b6ff, type: 3}
       propertyPath: m_LocalPosition.y
@@ -358,7 +358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4456881266409277851, guid: 47c3e0c91b70f3941a1f36f13194b6ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4456881266409277851, guid: 47c3e0c91b70f3941a1f36f13194b6ff, type: 3}
       propertyPath: m_LocalPosition.y

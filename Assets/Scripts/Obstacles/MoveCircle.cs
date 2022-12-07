@@ -2,29 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveCircle : MonoBehaviour
+public class MoveCircle : CollisionOnTop
 {
     float speed;
     float radius;
-    [SerializeField] float angle; //radians
-    [SerializeField] float xBefore;
-    public Vector3 dist;
+    float angle; //radians
+    Vector3 posBefore;
+    Collision2D otherCollision;
 
-    void Awake()
+    protected override void Awake()
     {
         MoveRoulette mr = gameObject.GetComponentInParent(typeof(MoveRoulette)) as MoveRoulette;
         speed = mr.speed;
         radius = mr.radius;
         angle =  Mathf.Atan2( transform.localPosition.x, transform.localPosition.y );
-        // distance = new Vector3(
-        //     radius * Mathf.Cos(-speed * Time.deltaTime),
-        //     radius * Mathf.Sin(-speed * Time.deltaTime),
-        //     0 );
+        base.Awake();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        xBefore = transform.localPosition.x;
+        posBefore = transform.localPosition;
         if (angle >= 2 * Mathf.PI)
         {
             angle = 0;
@@ -38,10 +35,23 @@ public class MoveCircle : MonoBehaviour
             radius * Mathf.Sin(angle),
             transform.localPosition.z
         );
+        if (isOnTop && otherCollision!=null)
+        {
+            otherCollision.transform.Translate( Vector2.one * (transform.localPosition - posBefore) );
+        }
     }
 
-    void OnCollisionStay2D(Collision2D other)
+    protected override void OnCollisionTopEnter(Collision2D other)
     {
-        other.transform.Translate( Vector3.right * (transform.localPosition.x - xBefore) * 1 );
+        otherCollision = other;
     }
+    protected override void OnCollisionTopExit(Collision2D other)
+    {
+        otherCollision = null;
+    }
+    // void OnCollisionStay2D(Collision2D other)
+    // {
+    //     // Vector2 distance = ;
+    //     other.transform.Translate( Vector2.one * (transform.localPosition - posBefore) );
+    // }
 }
