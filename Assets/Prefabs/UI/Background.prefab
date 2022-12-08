@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileMap: {fileID: 0}
-  yOverflow: 2
+  yOverflow: 0
 --- !u!1 &4540650114964391189
 GameObject:
   m_ObjectHideFlags: 0
