@@ -8,6 +8,7 @@ TagManager:
   - SkillInfo
   - Dialog
   - CloseDialog
+  - Spikes
   layers:
   - Default
   - TransparentFX
