@@ -387,11 +387,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
 --- !u!1 &4767490559605032752
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,11 +403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< Updated upstream
-  m_IsActive: 1
-=======
   m_IsActive: 0
->>>>>>> Stashed changes
 --- !u!4 &6779442041714359726
 Transform:
   m_ObjectHideFlags: 0
@@ -507,7 +498,3 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
