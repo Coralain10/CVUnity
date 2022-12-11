@@ -10,7 +10,6 @@ TagManager:
   - CloseDialog
   - Spikes
   - Ladder
-  - Stair
   layers:
   - Default
   - TransparentFX
