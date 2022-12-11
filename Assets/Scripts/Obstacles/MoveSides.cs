@@ -31,6 +31,7 @@ public class MoveSides : MonoBehaviour
             else
             {
                 isRightFaced = false;
+                transform.localScale *= new Vector2(-1,1);
             }
         }
         else
@@ -42,6 +43,7 @@ public class MoveSides : MonoBehaviour
             else
             {
                 isRightFaced = true;
+                transform.localScale *= new Vector2(-1,1);
             }
         }
     }
