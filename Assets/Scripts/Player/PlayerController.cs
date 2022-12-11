@@ -10,10 +10,13 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     TouchingDirections touchingDirections;
     short speed = 16;
-    float forwardInput;
+    float horizontalInput;
+    float maxFallingVelocity = -10f;
     float jumpFirstPosition;
     bool isDying;
     bool isJumping;
+    bool didFallHigh;
+    public bool isOnLadder;
     
     bool _isFacingRight;
     public bool IsFacingRight
@@ -33,6 +36,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         _isFacingRight = true;
         isJumping = false;
+        isOnLadder = false;
+        didFallHigh = false;
     }
 
     void FixedUpdate()
@@ -45,34 +50,40 @@ public class PlayerController : MonoBehaviour
         if (!liveArr.lostAllLives)
         {
             setFacingDirection();
-            Move();
             CheckJump();
+            Move();
         }
     }
 
     void setFacingDirection ()
     {
-        forwardInput = Input.GetAxis("Horizontal");
-        if (forwardInput > 0 && !IsFacingRight)
+        horizontalInput = Input.GetAxis("Horizontal");
+        if (horizontalInput > 0 && !IsFacingRight)
         {
             IsFacingRight = true;
         }
-        else if (forwardInput < 0 && IsFacingRight)
+        else if (horizontalInput < 0 && IsFacingRight)
         {
             IsFacingRight = false;
         }
     }
-
+    
     void Move()
     {
         if (touchingDirections.IsOnGround)
         {
-            rb.velocity = new Vector2(forwardInput * speed, rb.velocity.y);
+            rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
+            didFallHigh = false;
         }
         else
         {
             float airResistance = 2f;
-            rb.velocity = new Vector2(forwardInput * (speed/airResistance), rb.velocity.y);
+            rb.velocity = new Vector2(horizontalInput * (speed/airResistance), rb.velocity.y);
+            if (!didFallHigh && rb.velocity.y < maxFallingVelocity && !isOnLadder) //velocity.y keeps decreasing
+            {
+                gotDamage();
+                didFallHigh = true;
+            }
         }
     }
 
@@ -90,10 +101,9 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
     void Jump()
     {
-        //Impultso para saltar según cuánto corrió
+        //Impulso para saltar según cuánto corrió
         float jumpMaxDistance = 1.5f;
         float jumpCurrDistance = Mathf.Min( Mathf.Abs(transform.position.x - jumpFirstPosition), jumpMaxDistance );
         float jumpMaxHeight = 2.5f, jumpMinHeight = 1.25f;
@@ -114,6 +124,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator Dying() {
+        while (isDying) {
+            gotDamage();
+            yield return new WaitForSeconds(0.25f);
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Spikes"))
@@ -127,15 +144,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Spikes"))
         {
             isDying = false;
-            // StartCoroutine( liveArr.Recover() );
             liveArr.Recover();
-        }
-    }
-
-    IEnumerator Dying() {
-        while (isDying) {
-            gotDamage();
-            yield return new WaitForSeconds(0.25f);
         }
     }
 }

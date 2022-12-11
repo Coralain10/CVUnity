@@ -17,6 +17,7 @@ public class LiveArray : MonoBehaviour
 
     public void SetDamage() 
     {
+        if (lastLiveIdx < 0) return;
         if (lives[lastLiveIdx].health > 0)
         {
             lives[lastLiveIdx].SetDamage();

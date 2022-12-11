@@ -9,6 +9,7 @@ TagManager:
   - Dialog
   - CloseDialog
   - Spikes
+  - Ladder
   - Stair
   layers:
   - Default
