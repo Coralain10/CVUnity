@@ -9,10 +9,11 @@ using System.Linq;
 public class TargetsManager : MonoBehaviour
 {
     public string jsonTargetsPath;
-    // public Star[] stars;
+    public List<Star> stars;
     // public Skill[] skills;
     [SerializeField] GameObject starPrefab;
     [SerializeField] GameObject skillPrefab;
+
     bool isSaved;
     
     void Start()
@@ -28,6 +29,14 @@ public class TargetsManager : MonoBehaviour
     void Awake()
     {
         isSaved = false;
+        stars = GameObject.FindGameObjectsWithTag("Star")
+                .Select((obj, i) => {
+                    Star star = obj.GetComponent<Star>();
+                    star.targetIndex = i;
+                    return star;
+                })
+                .ToList();
+        // skills = GameObject.FindGameObjectsWithTag("Skill");
     }
 
     void Update()
@@ -59,29 +68,19 @@ public class TargetsManager : MonoBehaviour
     public void SaveTargets()
     {
         SaveData data = new SaveData();
-        // GameObject[] stars = GameObject.FindGameObjectsWithTag("Star");
-        // foreach (Star star in stars) { data.stars.Add(star); }
-        data.stars = (List<Star.SaveTarget>)getListByTag("Star");
+        data.stars = stars.Select( obj => obj.Tokenize() ).ToList();
         string json = JsonUtility.ToJson(data);
         File.WriteAllText(jsonTargetsPath, json);
         Debug.Log("json " + json);
     }
 
-    List<Target.SaveTarget> getListByTag(string tag)
-    {
-        return GameObject.FindGameObjectsWithTag(tag)
-                    .Select(obj => obj.GetComponent<Target>().Tokenize())
-                    .ToList();
-    }
-
     public void LoadTargets()
     {
-
         if (File.Exists(jsonTargetsPath))
         {
             string json = File.ReadAllText(jsonTargetsPath);
             SaveData data = JsonUtility.FromJson<SaveData>(json);
-            InstantiateByList(starPrefab, data.stars);
+            // InstantiateByList(starPrefab, data.stars);
             // InstantiateByList(skillPrefab, data.skills);
         }
         // foreach (Star star in stars)
@@ -98,17 +97,17 @@ public class TargetsManager : MonoBehaviour
         // }
     }
 
-    void InstantiateByList(GameObject prefab, List<Target.SaveTarget> targets)
-    {
-        targets.ForEach(obj => {
-            Target target = new Target();
-            target.RestoreFromToken(obj, true);
-            GameObject tObj = Instantiate(prefab, obj.position, target.transform.rotation, target.transform.parent);
-            //TODO
-            // En skill info script para obtener el target info
-            // instanciar skill info y setear el target como este actual
-        });
-    }
+    // void InstantiateByList(GameObject prefab, List<Target.SaveTarget> targets)
+    // {
+    //     targets.ForEach(obj => {
+    //         Target target = new Target();
+    //         target.RestoreFromToken(obj, true);
+    //         GameObject tObj = Instantiate(prefab, obj.position, target.transform.rotation, target.transform.parent);
+    //         //TODO
+    //         // En skill info script para obtener el target info
+    //         // instanciar skill info y setear el target como este actual
+    //     });
+    // }
 
 //     public void SaveColorClicked()
 // {

@@ -10,6 +10,8 @@ TagManager:
   - CloseDialog
   - Spikes
   - Ladder
+  - Star
+  - Skill
   layers:
   - Default
   - TransparentFX

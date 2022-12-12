@@ -6,55 +6,65 @@ using System.IO;
 
 public class Target : MonoBehaviour
 {
-    public Image image;
-    public string targetName;
-    public string description;
-    public bool obtained;
-    public byte progress;
+    Image image;
+    public int targetIndex;
+    private bool _obtained;
+    public bool obtained {
+        get => _obtained;
+        set {
+            _obtained = value;
+            if(_obtained) setImageAlpha(1f);
+            else setImageAlpha(0f);
+        }
+    }
 
     protected virtual void Awake()
     {
+        image = transform.Find("Canvas/Mask/Image").gameObject.GetComponent<Image>();
+        // image.sprite.name
+    }
+
+    private void setImageAlpha(float a)
+    {
+        var tempColor = image.color;
+        tempColor.a = a;
+        image.color = tempColor;
     }
 
     public virtual SaveTarget Tokenize()
     {
-        SaveTarget target  = new SaveTarget();
-        target.parentName  = transform.parent.name;
-        target.position    = transform.position;
-        target.spriteName  = image.sprite.name;
-        target.name        = targetName;
-        target.description = description;
-        target.progress    = progress;
-        target.obtained    = obtained;
+        SaveTarget target = new SaveTarget();
+        target.index      = targetIndex;
+        target.obtained   = obtained;
+        target.parentName = transform.parent.name;
+        target.position   = transform.position;
         return target;
     }
- 
-    public virtual void RestoreFromToken(SaveTarget target, bool setPosition = true)
+
+    public virtual void Restore(SaveTarget target)
     {
         if(target == null) throw new System.ArgumentNullException("target");
-        //omitir colocar posición si se carga desde info
-        if(setPosition)
-        {
-            transform.SetParent( GameObject.Find(target.parentName).transform ); //, false
-            transform.position = target.position;
-        }
-        image.sprite       = Resources.Load<Sprite>(target.spriteName);
-        targetName         = target.name;
-        description        = target.description;
-        progress           = target.progress;
-        obtained           = target.obtained;
-        // if (target.obtained) SetActive(false); //TODO set transparencia de Image a 0
+        targetIndex     = target.index;
+        obtained        = target.obtained;
+    }
+
+    protected void RestoreImage(string spriteName)
+    {
+        image.sprite = Resources.Load<Sprite>(spriteName);
+    }
+
+    protected virtual void RestoreObject(SaveTarget target)
+    {
+        // transform.SetParent( GameObject.Find(target.parentName).transform ); //, false
+        transform.position = target.position;
     }
     
     [System.Serializable]
     public class SaveTarget
     {
+        public int index;
+        public bool obtained;
         public string parentName;
         public Vector3 position;
-        public string spriteName;
-        public string name;
-        public string description;
-        public byte progress;
-        public bool obtained;
     }
 }
