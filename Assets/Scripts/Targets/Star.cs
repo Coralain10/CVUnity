@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class Star : Target
+public class Star : TargetGO
 {
-  StarInfo starInfo;
+  // public StarInfo starInfo;
   //STAR ROW
   // void Awake()
   // {
   // }
-  // UpdateObtained()
 
-  public override void Restore(SaveTarget target)
+  public override void RestoreObj(SaveTarget target)
   {
-    base.Restore(target);
-    starInfo = TargetsInfo.StarsInfo[targetIndex];
-    RestoreImage(starInfo.spriteName);
+    base.RestoreObj(target);
+  }
+  public void RestoreInfo(StarInfo starInfo)
+  {
+    RestoreInfo((TargetInfo)starInfo);
   }
 
 

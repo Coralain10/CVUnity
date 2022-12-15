@@ -1,21 +1,24 @@
 public class TargetInfo
 {
+    public int id;
+    public int idByType;
     public string name;
     public string spriteName;
 
-    public TargetInfo (string name, string spriteName)
+    public TargetInfo (string name, string spriteName) //int id, 
     {
-        this.name        = name;
-        this.spriteName  = spriteName;
+        // this.id         = id;
+        this.name       = name;
+        this.spriteName = spriteName;
     }
 }
 
 //////////////////////////////////////////////////
 
 public enum TypeStar {
+    Work,
     Education,
     GameRel,
-    Work,
 }
 
 public class StarInfo : TargetInfo

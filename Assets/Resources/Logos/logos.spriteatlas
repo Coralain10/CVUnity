@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: logos
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 45c85e2f5ce6d154a98e73263a64f07f, type: 3}
+    - {fileID: 2800000, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -414861970, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: -1588979773, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: 1149960794, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: 1209197414, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: -566210259, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: -62316190, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: 135094439, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: 1799301948, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: -1321482291, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: -1138025191, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: 73244365, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: -906697419, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: -139327078, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: 239350322, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: -215535409, guid: f7a25ab9bc5b40c49a25e2ab79c3abc5, type: 3}
+  - {fileID: 1477189399, guid: 45c85e2f5ce6d154a98e73263a64f07f, type: 3}
+  - {fileID: -1901720202, guid: 45c85e2f5ce6d154a98e73263a64f07f, type: 3}
+  - {fileID: -172867901, guid: 45c85e2f5ce6d154a98e73263a64f07f, type: 3}
+  - {fileID: 1516485258, guid: 45c85e2f5ce6d154a98e73263a64f07f, type: 3}
+  - {fileID: -1152609100, guid: 45c85e2f5ce6d154a98e73263a64f07f, type: 3}
+  - {fileID: 787528575, guid: 45c85e2f5ce6d154a98e73263a64f07f, type: 3}
+  - {fileID: -1626050453, guid: 45c85e2f5ce6d154a98e73263a64f07f, type: 3}
+  - {fileID: 605607133, guid: 45c85e2f5ce6d154a98e73263a64f07f, type: 3}
+  - {fileID: 1257926842, guid: 45c85e2f5ce6d154a98e73263a64f07f, type: 3}
+  - {fileID: 1052594545, guid: 45c85e2f5ce6d154a98e73263a64f07f, type: 3}
+  - {fileID: -711754453, guid: 45c85e2f5ce6d154a98e73263a64f07f, type: 3}
+  - {fileID: 396101827, guid: 45c85e2f5ce6d154a98e73263a64f07f, type: 3}
+  - {fileID: -2111958037, guid: 45c85e2f5ce6d154a98e73263a64f07f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - sw_mysql
+  - sw_react
+  - sw_js
+  - sw_jquery
+  - sw_csharp
+  - sw_git
+  - sw_python
+  - sw_angular
+  - sw_sqlserver
+  - sw_cplusplus
+  - sw_typescript
+  - sw_arduino
+  - sw_unity
+  - sw_vstudio
+  - sw_postgres
+  - inst_upc_cc
+  - inst_upc_av
+  - inst_coar
+  - inst_isil
+  - inst_make3D
+  - inst_upc_jg
+  - inst_upc_gl
+  - inst_clbs
+  - inst_lgm_past
+  - inst_lgj
+  - inst_stgj
+  - inst_isil_ds
+  - inst_ntwjam
+  m_RenderDataMap: {}
+  m_Tag: logos
+  m_IsVariant: 0

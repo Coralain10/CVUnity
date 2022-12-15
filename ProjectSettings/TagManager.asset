@@ -12,6 +12,8 @@ TagManager:
   - Ladder
   - Star
   - Skill
+  - RowStar
+  - RowSkill
   layers:
   - Default
   - TransparentFX
