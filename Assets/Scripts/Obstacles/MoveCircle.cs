@@ -9,7 +9,6 @@ public class MoveCircle : CollisionOnTop
     float angle; //radians
     Vector3 posBefore;
     Collision2D otherCollision;
-    // Rigidbody2D rb;
 
     protected override void Awake()
     {
@@ -38,23 +37,26 @@ public class MoveCircle : CollisionOnTop
             transform.localPosition.z
         );
         SetCollisionTopRange();
-        if (isOnTop && otherCollision!=null)
-        {
-            otherCollision.transform.Translate( Vector2.one * (transform.localPosition - posBefore) );
-            // otherCollision.rigidbody.velocity = rb.velocity;
-        }
+        // if (isOnTop && otherCollision!=null)
+        // {
+        //     otherCollision.transform.Translate( Vector2.one * (transform.localPosition - posBefore) );
+        //     // otherCollision.rigidbody.velocity = rb.velocity;
+        // }
     }
 
     protected override void OnCollisionTopEnter(Collision2D other)
     {
-        if( other.gameObject.CompareTag("Player") )
+        if( other.gameObject.CompareTag("Player"))
         {
-            otherCollision = other;
+            other.transform.parent = this.gameObject.transform;
         }
     }
     protected override void OnCollisionTopExit(Collision2D other)
     {
-        otherCollision = null;
+        if( other.gameObject.CompareTag("Player"))
+        {
+            other.transform.parent = null;
+        }
     }
     // void OnCollisionStay2D(Collision2D other)
     // {
