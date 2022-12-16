@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Target Game Object on Platform
 public class TargetGO : Target
 {
+    Text txtName;
+    SpriteRenderer spriteRdr;
+    
     public virtual SaveTarget Tokenize(TargetInfo info)
     {
         SaveTarget target = new SaveTarget();
@@ -14,6 +18,10 @@ public class TargetGO : Target
         target.parentName = transform.parent.name;
         target.position   = transform.position;
         return target;
+    }
+
+    protected override void OnObtainedChange(){
+        if(!_obtained) gameObject.SetActive(false);
     }
     
     public virtual void RestoreObj(SaveTarget target)
@@ -26,7 +34,11 @@ public class TargetGO : Target
 
     public virtual void RestoreInfo(TargetInfo info)
     {
-        RestoreImage(info.spriteName);
+        txtName = transform.Find("Dialog/Canvas/Name").gameObject.GetComponent<Text>();
+        txtName.text = "+1 " + info.name;
+
+        spriteRdr = transform.Find("Object/Image").gameObject.GetComponent<SpriteRenderer>();
+        spriteRdr.sprite = LoadSprite(info.spriteName);
     } 
     
     [System.Serializable]
