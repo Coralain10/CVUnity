@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 360, y: 0}
-  m_SizeDelta: {x: 360, y: 32}
+  m_SizeDelta: {x: 360, y: 24}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3034452824285524630
 CanvasRenderer:
@@ -60,15 +60,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.09411765, b: 0.28627452, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1505172330, guid: d20cbcc0807b7094190cddf35b130eb3, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 33bc20723a525234280d3b3135a6da6e, type: 3}
+  m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -112,8 +112,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 0.1225}
-  m_SizeDelta: {x: 347.7963, y: 21.4914}
+  m_AnchoredPosition: {x: 4, y: 0}
+  m_SizeDelta: {x: 352, y: 16}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &8875544698624412933
 CanvasRenderer:
@@ -136,23 +136,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9921569, g: 0.8705883, b: 0.16862746, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: 65dcdf395c102b147b45edea180a57a5, type: 3}
+  m_Type: 2
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.25
 --- !u!1001 &7185595156482008998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -190,11 +190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 488219921848254524, guid: 491d41ac6957441418cb976f0e15a957, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 672
+      value: 728
       objectReference: {fileID: 0}
     - target: {fileID: 488219921848254524, guid: 491d41ac6957441418cb976f0e15a957, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 96
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 488219921848254524, guid: 491d41ac6957441418cb976f0e15a957, type: 3}
       propertyPath: m_LocalPosition.x
@@ -254,7 +254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2425580526463485588, guid: 491d41ac6957441418cb976f0e15a957, type: 3}
       propertyPath: m_Name
-      value: Row Skill Variant
+      value: Row Skill
       objectReference: {fileID: 0}
     - target: {fileID: 5071645428749068725, guid: 491d41ac6957441418cb976f0e15a957, type: 3}
       propertyPath: m_Sprite

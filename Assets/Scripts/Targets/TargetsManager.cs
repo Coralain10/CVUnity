@@ -10,7 +10,7 @@ public class TargetsManager : MonoBehaviour
 {
     public string jsonTargetsPath;
     public List<StarRow> starRows;
-    // public List<SkillRow> skillsRows;
+    public List<SkillRow> skillsRows;
 
     bool isSaved;
     
@@ -28,7 +28,11 @@ public class TargetsManager : MonoBehaviour
     {
         // starRows = GameObject.FindGameObjectsWithTag("RowStar").Select( star => star.GetComponent<StarRow>() ).ToList();
         starRows = transform.GetComponentsInChildren<StarRow>(true).ToList();
+        skillsRows = transform.GetComponentsInChildren<SkillRow>(true).ToList();
+
         foreach (StarInfo s in TargetsInfo.StarsInfo) starRows[s.idByType].Restore(s);
+        foreach (SkillInfo s in TargetsInfo.SkillsInfo) skillsRows[s.idByType].Restore(s);
+        
         LoadTargets();
     }
 
@@ -48,6 +52,9 @@ public class TargetsManager : MonoBehaviour
             SaveData data = JsonUtility.FromJson<SaveData>(json);
             data.stars.ForEach( obj => {
                 starRows[ obj.infoIndex ].obtained = obj.obtained;
+            });
+            data.skills.ForEach( obj => {
+                skillsRows[ obj.gameIndex ].obtained = obj.obtained;
             });
         }
     }

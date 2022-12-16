@@ -10,7 +10,7 @@ public class TargetsObjManager : MonoBehaviour
 {
     [SerializeField] TargetsManager targetsManager;
     public List<Star> stars; //
-    // public Skill[] skills;
+    public List<Skill> skills; //
 
     bool isSaved;
     
@@ -21,10 +21,11 @@ public class TargetsObjManager : MonoBehaviour
     void Awake()
     {
         isSaved = false;
-        stars = GameObject.FindGameObjectsWithTag("Star").Select( star => star.GetComponent<Star>() ).ToList();
         // stars = transform.GetComponentsInChildren<Star>(true).ToList();
+        stars = GameObject.FindGameObjectsWithTag("Star").Select( star => star.GetComponent<Star>() ).ToList();
+        skills = GameObject.FindGameObjectsWithTag("Skill").Select( skill => skill.GetComponent<Skill>() ).ToList();
         foreach (StarInfo s in TargetsInfo.StarsInfo) stars[s.id].RestoreInfo(s);
-        // skills = GameObject.FindGameObjectsWithTag("Skill");
+        foreach (SkillInfo s in TargetsInfo.SkillsInfo) skills[s.id].RestoreInfo(s);
         LoadTargets();
     }
 
@@ -42,9 +43,13 @@ public class TargetsObjManager : MonoBehaviour
     public void SaveTargets()
     {
         TargetsManager.SaveData data = new TargetsManager.SaveData();
-        data.stars = new List<Star.SaveTarget>(TargetsInfo.StarsInfo.Length);
-        foreach (StarInfo s in TargetsInfo.StarsInfo) data.stars[s.id] = stars[s.id].Tokenize(s);
         // data.stars = stars.Select( obj => obj.Tokenize() ).ToList();
+        data.stars = new List<Star.SaveTarget>(TargetsInfo.StarsInfo.Length);
+        data.skills = new List<Skill.SaveTarget>(TargetsInfo.SkillsInfo.Length);
+
+        foreach (StarInfo s in TargetsInfo.StarsInfo) data.stars[s.id] = stars[s.id].Tokenize(s);
+        foreach (SkillInfo s in TargetsInfo.SkillsInfo) data.skills[s.id] = skills[s.id].Tokenize(s);
+
         string json = JsonUtility.ToJson(data);
         File.WriteAllText(targetsManager.jsonTargetsPath, json);
         Debug.Log("json " + json);
@@ -57,6 +62,7 @@ public class TargetsObjManager : MonoBehaviour
             string json = File.ReadAllText(targetsManager.jsonTargetsPath);
             TargetsManager.SaveData data = JsonUtility.FromJson<TargetsManager.SaveData>(json);
             data.stars.ForEach( obj => { stars[ obj.gameIndex ].RestoreObj(obj); });
+            data.skills.ForEach( obj => { skills[ obj.gameIndex ].RestoreObj(obj); });
         }
     }
 

@@ -85,6 +85,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5186141145877217120, guid: b21027a2f8baa1e4ab2c0f6ddb2b5ab1, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186141145877217120, guid: b21027a2f8baa1e4ab2c0f6ddb2b5ab1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e7b8e4c068b923e479362a4e8b2fe0b6, type: 3}
     - target: {fileID: 5186141145877217126, guid: b21027a2f8baa1e4ab2c0f6ddb2b5ab1, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1

@@ -10,7 +10,7 @@ public class SkillRow : TargetRow
     public void Restore(SkillInfo info)
     {
         progress = transform.Find("ProgressBar/Progress");
-        progress.localScale = Vector3.right * (info.progress / 100);
+        progress.localScale = new Vector3 (info.progress / 100f, 1, 1);
         base.Restore(info);
     }
 }

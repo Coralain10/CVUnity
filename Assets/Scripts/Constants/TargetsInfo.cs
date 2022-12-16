@@ -36,20 +36,15 @@ public static class TargetsInfo
         //Education U
         new SkillInfo( TypeSkill.Language , "cplusplus"  , "sw_cplusplus"  , 60 ), //  7 ,
         new SkillInfo( TypeSkill.Language , "python"     , "sw_python"     , 70 ), //  8 ,
+        new SkillInfo( TypeSkill.Software , "git"        , "sw_git"        , 30 ), // 13 ,
+        new SkillInfo( TypeSkill.Database , "postgres"   , "sw_postgres"   , 30 ), // 12 ,
         new SkillInfo( TypeSkill.WebF     , "typescript" , "sw_typescript" , 80 ), //  9 ,
         new SkillInfo( TypeSkill.WebF     , "react"      , "sw_react"      , 50 ), // 10 ,
         new SkillInfo( TypeSkill.WebF     , "angular"    , "sw_angular"    , 50 ), // 11 ,
-        new SkillInfo( TypeSkill.Database , "postgres"   , "sw_postgres"   , 30 ), // 12 ,
-        new SkillInfo( TypeSkill.Software , "git"        , "sw_git"        , 30 ), // 13 ,
         //Experience
         new SkillInfo( TypeSkill.Software , "unity"      , "sw_unity"      , 30 ) // 14 ,
     });
 
-    // public static readonly StarInfo[] StarsInfo   = _starsInfo;
-    // public static readonly SkillInfo[] SkillsInfo = _skillsInfo;
-
-    // public static readonly StarInfo[] StarsInfoByType = StarsInfo.OrderBy(s => s.type).ToArray();
-    // public static readonly SkillInfo[] SkillsInfoByType = SkillsInfo.OrderBy(s => s.type).ToArray();
 
     private static StarInfo[] setIds(StarInfo[] array)
     {
