@@ -30,25 +30,32 @@ public class BreakingBlock : MonoBehaviour
     }
 
     IEnumerator BreakBlock() {
-        while ( smthOn && state < State.Dissipated ) {
+        while ( smthOn ) {
             yield return new WaitForSeconds(timePerState);
-            state++;
-            ActOnState();
+            if (state < State.Dissipated)
+            {
+                state++;
+                ActOnState();
+            }
         }
+        yield return null;
     }
     IEnumerator RecoverBlock() {
-        while ( !smthOn && state > State.Complete ) {
+        while ( !smthOn ) {
             yield return new WaitForSeconds(timePerState);
-            state--;
-            ActOnState();
+            if (state > State.Complete)
+            {
+                state--;
+                ActOnState();
+            }
         }
+        yield return null;
     }
     
     void ActOnState() {
         switch (state)
         {
-            case State.Complete:
-                // StopCoroutine(BreakBlock());
+            case State.Broken:
                 spriteRdr.enabled = true;
                 boxCollider2D.isTrigger = false;
                 break;
