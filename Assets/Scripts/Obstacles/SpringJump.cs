@@ -15,13 +15,13 @@ public class SpringJump : JumpOtherOnCollision
     }
 
     protected override void OnCollisionTopEnter(Collision2D other) {
-        collider.offset = Vector2.down * 0.25f;
+        col.offset = Vector2.down * 0.25f;
         spriteRdrr.sprite = sprites[1];
         base.OnCollisionTopEnter(other);
     }
 
     protected override void OnCollisionTopExit(Collision2D other) {
         spriteRdrr.sprite = sprites[0];
-        collider.offset = Vector2.up * 0.25f;
+        col.offset = Vector2.up * 0.25f;
     }
 }
