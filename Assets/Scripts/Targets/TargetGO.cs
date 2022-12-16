@@ -8,6 +8,17 @@ public class TargetGO : Target
 {
     Text txtName;
     SpriteRenderer spriteRdr;
+    protected GameObject dialog;
+    protected GameObject objToCollide;
+    protected Animator dialogAnim;
+
+    protected virtual void Awake()
+    {
+        dialog = transform.Find("Dialog").gameObject;
+        dialogAnim = dialog.GetComponent<Animator>();
+        objToCollide = transform.Find("Object").gameObject;
+        dialog.SetActive(false);
+    }
     
     public virtual SaveTarget Tokenize(TargetInfo info)
     {
@@ -49,5 +60,20 @@ public class TargetGO : Target
         public int infoIndex;
         public string parentName;
         public Vector3 position;
+    }
+
+    protected void DialogShowHide()
+    {
+        objToCollide.SetActive(false);
+        dialog.SetActive(true);
+        dialogAnim.Play("FadingUp");
+        StartCoroutine( DialogHide() );
+    }
+
+    private IEnumerator DialogHide()
+    {
+        yield return new WaitForSeconds(3);
+        dialogAnim.Play("HidingUp");
+        Destroy(gameObject, 0.5f);
     }
 }

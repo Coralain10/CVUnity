@@ -40,10 +40,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -415592972, guid: 16da4ef38e94be94d9117772ac3aecfe, type: 3}
     - target: {fileID: 3518519953226276630, guid: a600796dd38a5da438119745bd0c356f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3518519953226276630, guid: a600796dd38a5da438119745bd0c356f, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -132,13 +128,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!70 &52866464495603138
+--- !u!1 &4533375710782182750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9014430266656371126, guid: a600796dd38a5da438119745bd0c356f, type: 3}
+  m_PrefabInstance: {fileID: 4895546529531258088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &5454976142157123676
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2382092443575942229}
+  m_GameObject: {fileID: 4533375710782182750}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -148,11 +149,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 0.92}
   m_Direction: 1
---- !u!1 &4533375710782182750 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9014430266656371126, guid: a600796dd38a5da438119745bd0c356f, type: 3}
-  m_PrefabInstance: {fileID: 4895546529531258088}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6886997762006086954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,5 +161,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aff28cc032d127a46945be91d9a7dea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: 0
-  xMax: 0

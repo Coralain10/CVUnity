@@ -20,10 +20,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1814276377, guid: 16da4ef38e94be94d9117772ac3aecfe, type: 3}
     - target: {fileID: 3518519953226276630, guid: a600796dd38a5da438119745bd0c356f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3518519953226276630, guid: a600796dd38a5da438119745bd0c356f, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -89,18 +85,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a600796dd38a5da438119745bd0c356f, type: 3}
---- !u!1 &529305558046845675 stripped
+--- !u!1 &1783238387536724960 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7133312399622740157, guid: a600796dd38a5da438119745bd0c356f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 9014430266656371126, guid: a600796dd38a5da438119745bd0c356f, type: 3}
   m_PrefabInstance: {fileID: 7324793961336451670}
   m_PrefabAsset: {fileID: 0}
---- !u!58 &7938606498492208120
+--- !u!58 &1539892006772239156
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529305558046845675}
+  m_GameObject: {fileID: 1783238387536724960}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -109,12 +105,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.47
---- !u!1 &1783238387536724960 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9014430266656371126, guid: a600796dd38a5da438119745bd0c356f, type: 3}
-  m_PrefabInstance: {fileID: 7324793961336451670}
-  m_PrefabAsset: {fileID: 0}
+  m_Radius: 0.46
 --- !u!114 &1371488688107681978
 MonoBehaviour:
   m_ObjectHideFlags: 0
