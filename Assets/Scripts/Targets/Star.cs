@@ -24,7 +24,7 @@ public class Star : TargetGO
     {
         if (other.CompareTag("Player"))
         {
-            DialogShowHide();
+            tManager.starRows[infoIndex].obtained = obtained = true;
         }
     }
 }

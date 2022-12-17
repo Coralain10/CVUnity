@@ -9,7 +9,7 @@ public class Target : MonoBehaviour
 {
     protected SpriteAtlas spriteAtlas;
     
-    protected bool _obtained;
+    protected bool _obtained = false;
     public bool obtained {
         get => _obtained;
         set

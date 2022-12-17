@@ -8,23 +8,27 @@ public class TargetGO : Target
 {
     Text txtName;
     SpriteRenderer spriteRdr;
+    protected TargetsManager tManager;
     protected GameObject dialog;
     protected GameObject objToCollide;
     protected Animator dialogAnim;
+    public int infoIndex { get; protected set; }
+    public int gameIndex { get; protected set; }
 
     protected virtual void Awake()
     {
-        dialog = transform.Find("Dialog").gameObject;
-        dialogAnim = dialog.GetComponent<Animator>();
+        tManager     = GameObject.Find("Dialogs In Game").GetComponent<TargetsManager>();
+        dialog       = transform.Find("Dialog").gameObject;
+        dialogAnim   = dialog.GetComponent<Animator>();
         objToCollide = transform.Find("Object").gameObject;
         dialog.SetActive(false);
     }
     
-    public virtual SaveTarget Tokenize(TargetInfo info)
+    public virtual SaveTarget Tokenize() //TargetInfo info
     {
         SaveTarget target = new SaveTarget();
-        target.gameIndex  = info.id;
-        target.infoIndex  = info.idByType;
+        target.gameIndex  = gameIndex;
+        target.infoIndex  = infoIndex;
         target.obtained   = obtained;
         target.parentName = transform.parent.name;
         target.position   = transform.position;
@@ -32,7 +36,13 @@ public class TargetGO : Target
     }
 
     protected override void OnObtainedChange(){
-        if(!_obtained) gameObject.SetActive(false);
+        if(_obtained) 
+        {
+            objToCollide.SetActive(false);
+            dialog.SetActive(true);
+            dialogAnim.Play("FadingUp");
+            StartCoroutine( DialogHide() );
+        }
     }
     
     public virtual void RestoreObj(SaveTarget target)
@@ -45,6 +55,9 @@ public class TargetGO : Target
 
     public virtual void RestoreInfo(TargetInfo info)
     {
+        infoIndex = info.id;
+        gameIndex = info.idByType;
+
         txtName = transform.Find("Dialog/Canvas/Name").gameObject.GetComponent<Text>();
         txtName.text = "+1 " + info.name;
 
@@ -60,14 +73,6 @@ public class TargetGO : Target
         public int infoIndex;
         public string parentName;
         public Vector3 position;
-    }
-
-    protected void DialogShowHide()
-    {
-        objToCollide.SetActive(false);
-        dialog.SetActive(true);
-        dialogAnim.Play("FadingUp");
-        StartCoroutine( DialogHide() );
     }
 
     private IEnumerator DialogHide()

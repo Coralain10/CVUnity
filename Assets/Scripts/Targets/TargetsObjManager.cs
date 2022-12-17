@@ -24,8 +24,10 @@ public class TargetsObjManager : MonoBehaviour
         // stars = transform.GetComponentsInChildren<Star>(true).ToList();
         stars = GameObject.FindGameObjectsWithTag("Star").Select( star => star.GetComponent<Star>() ).ToList();
         skills = GameObject.FindGameObjectsWithTag("Skill").Select( skill => skill.GetComponent<Skill>() ).ToList();
+
         foreach (StarInfo s in TargetsInfo.StarsInfo) stars[s.id].RestoreInfo(s);
         foreach (SkillInfo s in TargetsInfo.SkillsInfo) skills[s.id].RestoreInfo(s);
+
         LoadTargets();
     }
 
@@ -47,8 +49,8 @@ public class TargetsObjManager : MonoBehaviour
         data.stars = new List<Star.SaveTarget>(TargetsInfo.StarsInfo.Length);
         data.skills = new List<Skill.SaveTarget>(TargetsInfo.SkillsInfo.Length);
 
-        foreach (StarInfo s in TargetsInfo.StarsInfo) data.stars[s.id] = stars[s.id].Tokenize(s);
-        foreach (SkillInfo s in TargetsInfo.SkillsInfo) data.skills[s.id] = skills[s.id].Tokenize(s);
+        foreach (StarInfo s in TargetsInfo.StarsInfo) data.stars[s.id] = stars[s.id].Tokenize();
+        foreach (SkillInfo s in TargetsInfo.SkillsInfo) data.skills[s.id] = skills[s.id].Tokenize();
 
         string json = JsonUtility.ToJson(data);
         File.WriteAllText(targetsManager.jsonTargetsPath, json);
