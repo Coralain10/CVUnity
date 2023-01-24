@@ -11,11 +11,11 @@ public class PlayerController : MonoBehaviour
     TouchingDirections touchingDirections;
     short speed = 16;
     float horizontalInput;
-    float maxFallingVelocity = -10f;
+    // float maxFallingVelocity = -10f;
     float jumpFirstPosition;
     bool isDying;
     bool isJumping;
-    bool didFallHigh;
+    // bool didFallHigh;
     public bool isOnLadder;
     
     bool _isFacingRight;
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         _isFacingRight = true;
         isJumping = false;
         isOnLadder = false;
-        didFallHigh = false;
+        // didFallHigh = false;
     }
 
     void FixedUpdate()
@@ -73,17 +73,17 @@ public class PlayerController : MonoBehaviour
         if (touchingDirections.IsOnGround)
         {
             rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
-            didFallHigh = false;
+            // didFallHigh = false;
         }
         else
         {
             float airResistance = 2f;
             rb.velocity = new Vector2(horizontalInput * (speed/airResistance), rb.velocity.y);
-            if (!didFallHigh && rb.velocity.y < maxFallingVelocity && !isOnLadder) //velocity.y keeps decreasing
-            {
-                gotDamage();
-                didFallHigh = true;
-            }
+            // if (!didFallHigh && rb.velocity.y < maxFallingVelocity && !isOnLadder) //velocity.y keeps decreasing
+            // {
+            //     gotDamage();
+            //     didFallHigh = true;
+            // }
         }
     }
 
