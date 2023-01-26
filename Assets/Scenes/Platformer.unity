@@ -14522,10 +14522,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
-    - target: {fileID: 4767490559605032752, guid: 2163f7d41a245d24da2ab46253e3de54, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7648107033771791435, guid: 2163f7d41a245d24da2ab46253e3de54, type: 3}
       propertyPath: tileMap
       value: 

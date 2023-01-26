@@ -14,6 +14,7 @@ TagManager:
   - Skill
   - RowStar
   - RowSkill
+  - PlayerCont
   layers:
   - Default
   - TransparentFX
