@@ -17,6 +17,8 @@ public class Skill : TargetGO
     [SerializeField] float halfWidth;
     [SerializeField] float visionRange = 4f;
     [SerializeField] bool isPlayerClose;
+    [SerializeField] int health = 4;
+    [SerializeField] int hitDamage = 2;
     public int direction { get; protected set; }
     // public float xMin;
     // public float xMax;
@@ -89,6 +91,11 @@ public class Skill : TargetGO
         // if ( other.collider.CompareTag("Bullet") ) GotDamage();
         // else
         if ( !other.collider.CompareTag("Player") && !other.collider.isTrigger ) ChangeDirection();
+    }
+
+    public void GotDamage() {
+        health -= hitDamage;
+        if (health <= 0) Die();
     }
 
     public void Die()

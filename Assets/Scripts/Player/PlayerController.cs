@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void CheckJump() {
-        if (touchingDirections.IsOnGround)
+        if (touchingDirections.IsOnGround || touchingDirections.IsOnSides)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {

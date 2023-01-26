@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class SkillPlayerCollision : JumpOtherOnCollision
 {
-    PlayerController playerController;
     Skill skill;
-    [SerializeField] int health = 4;
-    [SerializeField] int hitDamage = 2;
+    PlayerController playerController;
     [SerializeField] int jumpSideForce = 64;
     
     void Start()
@@ -24,7 +22,7 @@ public class SkillPlayerCollision : JumpOtherOnCollision
 
     protected override void OnCollisionTopEnter(Collision2D other) {
         // Debug.Log("Player on top");
-        GotDamage();
+        skill.GotDamage();
         base.OnCollisionTopEnter(other); //other jump
     }
 
@@ -39,10 +37,5 @@ public class SkillPlayerCollision : JumpOtherOnCollision
                 //TODO: player got damage
             }
         }
-    }
-
-    void GotDamage() {
-        health -= hitDamage;
-        if (health <= 0) skill.Die();
     }
 }
