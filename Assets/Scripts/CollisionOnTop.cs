@@ -7,7 +7,7 @@ public abstract class CollisionOnTop : MonoBehaviour
 {
     Vector2 startPosition, endPosition;
     protected Collider2D col;
-    protected bool isOnTop;
+    public bool isOnTop { protected set; get; }
     float padding = 0.1f;
     float topOffset = 0.55f;
     float halfWidth;
@@ -21,7 +21,7 @@ public abstract class CollisionOnTop : MonoBehaviour
         SetCollisionTopRange();
     }
 
-    protected void SetCollisionTopRange()
+    public void SetCollisionTopRange()
     {
         startPosition = (Vector2) transform.position + new Vector2(-halfWidth+padding, topOffset);
         endPosition = (Vector2) transform.position + new Vector2(halfWidth-padding, topOffset);
@@ -47,10 +47,7 @@ public abstract class CollisionOnTop : MonoBehaviour
         }
     }
 
-    protected virtual void OnCollisionTopEnter(Collision2D other)
-    {
-    }
+    protected virtual void OnCollisionTopEnter(Collision2D other) { }
 
-    protected virtual void OnCollisionTopExit(Collision2D other) {
-    }
+    protected virtual void OnCollisionTopExit(Collision2D other) { }
 }

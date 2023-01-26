@@ -8,7 +8,7 @@ public class MoveCircle : CollisionOnTop
     float radius;
     float angle; //radians
     Vector3 posBefore;
-    Collision2D otherCollision;
+    // Collision2D otherCollision;
 
     protected override void Awake()
     {

@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
         isJumping = false;
     }
 
-    void gotDamage()
+    public void gotDamage()
     {
         bloodParticle.Play();
         liveArr.SetDamage();
