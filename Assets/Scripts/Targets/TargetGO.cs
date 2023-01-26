@@ -59,7 +59,7 @@ public class TargetGO : Target
         gameIndex = info.idByType;
 
         txtName = transform.Find("Dialog/Canvas/Name").gameObject.GetComponent<Text>();
-        txtName.text = "+1 " + info.name;
+        txtName.text = info.name;
 
         spriteRdr = transform.Find("Object/Image").gameObject.GetComponent<SpriteRenderer>();
         spriteRdr.sprite = LoadSprite(info.spriteName);
@@ -79,6 +79,8 @@ public class TargetGO : Target
     {
         yield return new WaitForSeconds(3);
         dialogAnim.Play("HidingUp");
-        Destroy(gameObject, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        // Destroy(gameObject, 0.5f);
+        gameObject.SetActive(false);
     }
 }

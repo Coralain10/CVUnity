@@ -35,7 +35,7 @@ public class TargetsObjManager : MonoBehaviour
     {
         if(!isSaved)
         {
-            if (Input.GetKeyDown(KeyCode.X))
+            if ( Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.S) )
             {
                 SaveTargets();
             }
